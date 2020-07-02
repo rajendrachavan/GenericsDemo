@@ -9,6 +9,8 @@ public class GenericsDemo {
     public static void main(String[] args) {
         /**
          * Generics Type class or interface:
+         * A class is generic if it declares one or more type variables.
+         * These type variables are known as the type parameters of the class.
          * Generic Class Example:
          */
 	    GenericClass<String> genericClass = new GenericClass<>();
@@ -32,6 +34,9 @@ public class GenericsDemo {
 
         /**
          * Generic Methods Example:
+         * Generic methods are much similar to generic classes.
+         * They are different only in one aspect that scope of type information is inside method (or constructor) only.
+         * Generic methods are methods that introduce their own type parameters.
          */
         OrderedPair<Integer, String> p1 = new OrderedPair<>(1, "apple");
         OrderedPair<Integer, String> p2 = new OrderedPair<>(2, "pear");
@@ -105,6 +110,23 @@ public class GenericsDemo {
     }
 
     /**
+     * Unbounded Wildcard:
+     * The unbounded wildcard type is specified using the wildcard character (?),
+     * for example, List<?>. This is called a list of unknown type.
+     * There are two scenarios where an unbounded wildcard is a useful approach:
+     * If you are writing a method that can be implemented using functionality provided in the Object class.
+     * When the code is using methods in the generic class that don't depend on the type parameter.
+     * For example, List.size or List.clear.
+     * In fact, Class<?> is so often used because most of the methods in Class<T> do not depend on T.
+     * @param list of unknown type
+     */
+    public static void printList(List<?> list) {
+        for (Object elem : list)
+            System.out.println("Unbounded Wildcards: Example: "+ elem.getClass().getName() + " : "+ elem);
+        System.out.println();
+    }
+
+    /**
      * Upper Bounded Wildcard:
      * You can use an upper bounded wildcard to relax the restrictions on a variable.
      * For example, say you want to write a method that works on List<Integer>, List<Double>, and List<Number>;
@@ -121,23 +143,6 @@ public class GenericsDemo {
         for (Number n : list)
             s += n.doubleValue();
         return s;
-    }
-
-    /**
-     * Unbounded Wildcard:
-     * The unbounded wildcard type is specified using the wildcard character (?),
-     * for example, List<?>. This is called a list of unknown type.
-     * There are two scenarios where an unbounded wildcard is a useful approach:
-     * If you are writing a method that can be implemented using functionality provided in the Object class.
-     * When the code is using methods in the generic class that don't depend on the type parameter.
-     * For example, List.size or List.clear.
-     * In fact, Class<?> is so often used because most of the methods in Class<T> do not depend on T.
-     * @param list of unknown type
-     */
-    public static void printList(List<?> list) {
-        for (Object elem : list)
-            System.out.println("Unbounded Wildcards: Example: "+ elem.getClass().getName() + " : "+ elem);
-        System.out.println();
     }
 
     /**
@@ -181,3 +186,5 @@ class GrandChildClass extends ChildClass{
                 '}';
     }
 }
+
+

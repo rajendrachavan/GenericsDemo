@@ -3,7 +3,7 @@ package com.neo.generics_demo;
 /**
  * GenericClass is parameterized class,
  * which illustrates an example of GenericClasses
- * T stands for Type in Generics
+ * T stands for Type
  * @param <T> the class of the Objects
  */
 public class GenericClass<T> {

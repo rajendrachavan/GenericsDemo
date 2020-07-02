@@ -17,9 +17,7 @@ public class OrderedPair<K, V> implements GenericInterface<K, V> {
     }
 
     @Override
-    public K setKey(K key) {
-        return this.key = key;
-    }
+    public void setKey(K key) { this.key = key; }
 
     @Override
     public K getKey() {
@@ -27,9 +25,7 @@ public class OrderedPair<K, V> implements GenericInterface<K, V> {
     }
 
     @Override
-    public V setValue(V value) {
-        return this.value = value;
-    }
+    public void setValue(V value) { this.value = value; }
 
     @Override
     public V getValue() {

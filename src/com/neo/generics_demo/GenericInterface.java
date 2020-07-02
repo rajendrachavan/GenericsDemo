@@ -7,9 +7,9 @@ package com.neo.generics_demo;
  */
 public interface GenericInterface<K, V> {
 
-    public K setKey(K key);
+    public void setKey(K key);
     public K getKey();
-    public V setValue(V value);
+    public void setValue(V value);
     public V getValue();
 }
 
