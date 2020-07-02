@@ -15,7 +15,7 @@ public class GenericsDemo {
          */
 	    GenericClass<String> genericClass = new GenericClass<>();
 	    genericClass.setT("Alex");
-	    //stringGenericsClass.setT(1); -> This will raise a compile time error.
+        //genericClass.setT(1); //-> This will raise a compile time error.
         System.out.println("Generic-Class Output: "+genericClass.getT());
 
         /**

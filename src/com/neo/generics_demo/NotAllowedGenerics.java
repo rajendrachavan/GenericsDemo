@@ -13,7 +13,7 @@ public class NotAllowedGenerics<T> {
      * You can not define a static generic parameterized member in your class.
      * Any attempt to do so will generate compile time error: Cannot make a static reference to the non-static type T.
      */
-    //public static T variable;
+    public static T variable;
 
     /**
      * B) You cannot create instance of Type T:
